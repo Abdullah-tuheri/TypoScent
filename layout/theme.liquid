@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.language }}" dir="{{ request.locale.direction }}">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page_title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {{ 'style.css' | asset_url | stylesheet_tag }}
+  {{ 'main.js' | asset_url | script_tag }}
+  {{ content_for_header }}
+  {% if template == 'product' %}
+  <meta property="og:title" content="{{ product.title }}">
+  <meta property="og:description" content="{{ product.description | strip_html | truncatewords: 20 }}">
+  <meta property="og:image" content="{{ product.featured_image }}">
+  <meta property="og:url" content="{{ shop.url }}{{ product.url }}">
+{% endif %}
+<link rel="icon" href="{{ 'favicon.png' | asset_url }}" type="image/png">
+
+<link rel="apple-touch-icon" href="{{ 'apple-touch-icon.png' | asset_url }}" sizes="180x180">
+<link rel="icon" type="image/png" href="{{ 'favicon-32x32.png' | asset_url }}" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ 'favicon-16x16.png' | asset_url }}" sizes="16x16">
+<link rel="manifest" href="{{ 'site.webmanifest' | asset_url }}">
+</head>
+<body class="template-{{ template }} {% if request.locale.direction == 'rtl' %}rtl{% endif %}">
+
+  {% section 'header' %}
+  {{ content_for_layout }}
+  {% section 'footer' %}
+
+</body>
+</html>

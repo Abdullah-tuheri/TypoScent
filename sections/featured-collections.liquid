@@ -1,0 +1,33 @@
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">{{ 'home.featured_collections' | t }}</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {% for collection in collections limit:4 %}
+        <div class="group overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+          <div class="aspect-w-3 aspect-h-4 bg-light overflow-hidden">
+            <img 
+              src="{{ collection.image.src }}" 
+              alt="{{ collection.title }}" 
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-4">
+            <h3 class="font-medium mb-2 line-clamp-1">{{ collection.title }}</h3>
+            <p class="text-text/70 text-sm mb-4 line-clamp-2">{{ collection.description }}</p>
+            <a 
+              href="{{ collection.url }}" 
+              class="inline-flex items-center text-primary hover:text-accent transition-colors"
+            >
+              {{ 'home.shop_now' | t }}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2">
+                <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,86 @@
+{
+    "name": "Theme Settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary Color",
+        "default": "#8B4513"
+      },
+      {
+        "type": "color",
+        "id": "secondary_color",
+        "label": "Secondary Color",
+        "default": "#D2B48C"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent Color",
+        "default": "#A52A2A"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#FDF5E6"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#333333"
+      },
+      {
+        "type": "header",
+        "content": "Typography"
+      },
+      {
+        "type": "select",
+        "id": "font_en",
+        "label": "English Font",
+        "options": [
+          { "value": "'Montserrat', sans-serif", "label": "Montserrat" }
+        ],
+        "default": "'Montserrat', sans-serif"
+      },
+      {
+        "type": "select",
+        "id": "font_ar",
+        "label": "Arabic Font",
+        "options": [
+          { "value": "'IBM Plex Sans Arabic', sans-serif", "label": "IBM Plex Sans Arabic" }
+        ],
+        "default": "'IBM Plex Sans Arabic', sans-serif"
+      },
+      {
+        "type": "range",
+        "id": "base_font_size",
+        "label": "Base Font Size",
+        "min": 14,
+        "max": 18,
+        "step": 1,
+        "unit": "px",
+        "default": 16
+      },
+      {
+        "type": "header",
+        "content": "Header Settings"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "checkbox",
+        "id": "sticky_header",
+        "label": "Enable Sticky Header",
+        "default": true
+      }
+    ]
+  }

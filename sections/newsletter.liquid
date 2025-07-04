@@ -1,0 +1,21 @@
+<section class="py-16 bg-light">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-4">{{ 'footer.newsletter' | t }}</h2>
+    <p class="text-lg text-text/80 max-w-xl mx-auto mb-8">{{ 'footer.subscribe_description' | t }}</p>
+    
+    <form class="max-w-md mx-auto flex" dir="ltr">
+      <input 
+        type="email" 
+        placeholder="{{ 'footer.email_placeholder' | t }}" 
+        required 
+        class="flex-grow px-4 py-3 border border-gray-300 focus:outline-none focus:border-primary rounded-none"
+      />
+      <button 
+        type="submit" 
+        class="bg-primary hover:bg-accent text-white px-6 py-3 ml-2 transition-colors"
+      >
+        {{ 'footer.subscribe_button' | t }}
+      </button>
+    </form>
+  </div>
+</section>

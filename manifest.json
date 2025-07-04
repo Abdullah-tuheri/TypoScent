@@ -1,0 +1,25 @@
+{
+    "name": "Lamsat Abeer",
+    "version": "1.0.0",
+    "author": "ABDULLAH",
+    "description": "Thème moderne et réactif pour les magasins Salla, adapté aux parfums et essences luxueuses.",
+    "screenshot": "assets/screenshot.jpg",
+    "preview": "https://yourwebsite.com/preview ",
+    "engine": {
+      "type": "storefront",
+      "version": "1.0"
+    },
+    "settings": {
+      "general": {
+        "title": "Paramètres généraux",
+        "fields": [
+          {
+            "type": "text",
+            "id": "store_name",
+            "label": "Nom du magasin",
+            "default": "Lamsat Abeer"
+          }
+        ]
+      }
+    }
+  }

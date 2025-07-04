@@ -1,0 +1,94 @@
+{
+    "home": {
+      "hero_title": "Discover the Essence of Luxury",
+      "hero_subtitle": "Experience the art of perfumery with our curated collection of luxury fragrances"
+    },
+    "products": {
+      "badges": {
+        "sale": "Sale",
+        "new": "New Arrival"
+      },
+      "sort": "Sort By",
+      "filter": "Filter",
+      "add_to_cart": "Add to Cart",
+      "view_details": "View Details",
+      "add_to_cart_success": "Product added to cart successfully!",
+      "add_to_cart_error": "There was an error adding the product to cart.",
+      "comparison": {
+        "compare": "Compare",
+        "selected": "Selected"
+      },
+      "reviews": {
+        "thanks": "Thank you for your review! It will be published soon."
+      }
+    },
+    "cart": {
+      "title": "Shopping Cart",
+      "summary": "Order Summary",
+      "subtotal": "Subtotal",
+      "total": "Total",
+      "remove": "Remove",
+      "checkout": "Secure Checkout",
+      "continue_shopping": "Continue Shopping",
+      "empty": {
+        "title": "Your cart is empty",
+        "description": "Looks like you haven't added any products yet.",
+        "continue_shopping": "Continue Shopping"
+      },
+      "discount": {
+        "placeholder": "Enter discount code",
+        "apply": "Apply Discount"
+      }
+    },
+    "footer": {
+      "shop": "Shop",
+      "customer_service": "Customer Service",
+      "company": "Company",
+      "newsletter": "Newsletter"
+    },
+    "checkout": {
+      "title": "Checkout",
+      "order_summary": "Your Order",
+      "next": "Next",
+      "back": "Back",
+      "place_order": "Place Order",
+      "contact": {
+        "title": "Contact Information",
+        "email": "Email",
+        "email_placeholder": "you@example.com",
+        "create_account": "Create an account",
+        "points_info": "You'll earn 50 points for this purchase"
+      },
+      "shipping": {
+        "title": "Shipping Address",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "address": "Address",
+        "address_placeholder": "Street address, P.O. box",
+        "city": "City",
+        "state": "State",
+        "zip": "ZIP Code",
+        "country": "Country",
+        "select_country": "Select country",
+        "saudi_arabia": "Saudi Arabia",
+        "uae": "UAE",
+        "egypt": "Egypt",
+        "jordan": "Jordan",
+        "save_address": "Save this address for future use"
+      },
+      "payment": {
+        "title": "Payment Method",
+        "credit_card": "Credit Card",
+        "card_number": "Card Number",
+        "expiry_date": "Expiry Date",
+        "cvv": "CVV",
+        "cardholder_name": "Name on Card",
+        "paypal": "PayPal",
+        "apple_pay": "Apple Pay"
+      },
+      "saved_addresses": {
+        "title": "Saved Addresses",
+        "new": "Add new address"
+      }
+    }
+  }

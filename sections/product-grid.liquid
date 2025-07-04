@@ -1,0 +1,19 @@
+<div class="product-grid">
+  {% for product in collection.products %}
+    <div class="product-card">
+      <img src="{{ product.featured_image }}" alt="{{ product.title }}">
+      <h3>{{ product.title }}</h3>
+      <p>{{ product.price | money }}</p>
+    </div>
+  {% endfor %}
+</div>
+<div class="product-card">
+  <img src="{{ product.featured_image }}" alt="{{ product.title }}">
+  <h3>{{ product.title }}</h3>
+  <p>{{ product.price | money }}</p>
+  <button class="compare-btn" data-product-id="{{ product.id }}">مقارنة</button>
+</div>
+
+<!-- زر عرض المقارنة -->
+<a href="/compare" id="view-compare" style="display:none;">عرض المقارنة</a>
+<img src="{{ product.featured_image }}" alt="{{ product.title }}" loading="lazy">

@@ -1,0 +1,94 @@
+{
+    "home": {
+      "hero_title": "اكتشف جوهر الفخامة",
+      "hero_subtitle": "استمتع بفن العطور مع مجموعتنا المُختارة من عطور ذات جودة عالية"
+    },
+    "products": {
+      "badges": {
+        "sale": "خصم",
+        "new": "جديد"
+      },
+      "sort": "ترتيب حسب",
+      "filter": "تصفية",
+      "add_to_cart": "أضف للسلة",
+      "view_details": "عرض التفاصيل",
+      "add_to_cart_success": "تمت إضافة المنتج للسلة بنجاح!",
+      "add_to_cart_error": "حدث خطأ أثناء الإضافة للسلة",
+      "comparison": {
+        "compare": "مقارنة",
+        "selected": "مُختار"
+      },
+      "reviews": {
+        "thanks": "شكرًا لتقييمك! سيتم نشره قريبًا"
+      }
+    },
+    "cart": {
+      "title": "سلة التسوق",
+      "summary": "ملخص الطلبية",
+      "subtotal": "المجموع الفرعي",
+      "total": "المجموع",
+      "remove": "إزالة",
+      "checkout": "الدفع الآمن",
+      "continue_shopping": "متابعة التسوق",
+      "empty": {
+        "title": "سلة التسوق فارغة",
+        "description": "يبدو أنك لم تقم بإضافة أي منتجات بعد.",
+        "continue_shopping": "متابعة التسوق"
+      },
+      "discount": {
+        "placeholder": "أدخل كود الخصم",
+        "apply": "تطبيق الخصم"
+      }
+    },
+    "footer": {
+      "shop": "تسوق",
+      "customer_service": "خدمة العملاء",
+      "company": "الشركة",
+      "newsletter": "النشرة الإخبارية"
+    },
+    "checkout": {
+      "title": "الدفع",
+      "order_summary": "طلبك",
+      "next": "التالي",
+      "back": "السابق",
+      "place_order": "تأكيد الطلب",
+      "contact": {
+        "title": "معلومات العميل",
+        "email": "البريد الإلكتروني",
+        "email_placeholder": "you@example.com",
+        "create_account": "إنشاء حساب",
+        "points_info": "ستحصل على 50 نقطة لهذ الطلب"
+      },
+      "shipping": {
+        "title": "عنوان الشحن",
+        "first_name": "الاسم الأول",
+        "last_name": "الاسم الأخير",
+        "address": "العنوان",
+        "address_placeholder": "رقم الشارع، صندوق بريد",
+        "city": "المدينة",
+        "state": "المنطقة",
+        "zip": "الرمز البريدي",
+        "country": "البلد",
+        "select_country": "اختر البلد",
+        "saudi_arabia": "المملكة العربية السعودية",
+        "uae": "الإمارات العربية المتحدة",
+        "egypt": "مصر",
+        "jordan": "الأردن",
+        "save_address": "احفظ هذا العنوان للاستخدام مستقبلاً"
+      },
+      "payment": {
+        "title": "طريقة الدفع",
+        "credit_card": "بطاقة ائتمانية",
+        "card_number": "رقم البطاقة",
+        "expiry_date": "تاريخ الانتهاء",
+        "cvv": "رقم الأمان",
+        "cardholder_name": "اسم صاحب البطاقة",
+        "paypal": "باي بال",
+        "apple_pay": "أبل باي"
+      },
+      "saved_addresses": {
+        "title": "العناوين المحفوظة",
+        "new": "إضافة عنوان جديد"
+      }
+    }
+  }

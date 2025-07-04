@@ -1,0 +1,12 @@
+<div class="related-products">
+  <h2>منتجات ذات صلة</h2>
+  <div class="products-grid">
+    {% for product in collections.all.products limit:4 %}
+      <div class="product-item">
+        <img src="{{ product.featured_image }}" alt="{{ product.title }}">
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.price | money }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>

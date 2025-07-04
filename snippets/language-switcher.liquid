@@ -1,0 +1,64 @@
+<div class="language-switcher relative inline-block text-left" dir="ltr">
+  <button 
+    type="button" 
+    class="flex items-center space-x-2 p-2 text-text hover:text-primary transition-colors"
+    onclick="toggleLanguageMenu()"
+    aria-haspopup="true" 
+    aria-expanded="false"
+  >
+    {% if shop.locale == 'ar' %}
+      <span>AR</span>
+    {% else %}
+      <span>EN</span>
+    {% endif %}
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-300 transform language-arrow">
+      <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <div id="language-menu" class="origin-top-right absolute right-0 mt-2 w-32 rounded-none shadow-lg bg-light ring-1 ring-black ring-opacity-5 hidden z-50">
+    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+      <a href="#" 
+         class="block px-4 py-2 text-sm hover:bg-primary hover:text-white transition-colors" 
+         onclick="switchLanguage('en')"
+         role="menuitem">English</a>
+      <a href="#" 
+         class="block px-4 py-2 text-sm hover:bg-primary hover:text-white transition-colors" 
+         onclick="switchLanguage('ar')"
+         role="menuitem">العربية</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .language-switcher:hover .language-arrow {
+    transform: rotate(180deg);
+  }
+</style>
+
+<script>
+  function toggleLanguageMenu() {
+    const menu = document.getElementById('language-menu');
+    menu.classList.toggle('hidden');
+  }
+
+  function switchLanguage(lang) {
+    // تحديث اتجاه الصفحة
+    document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+    // إعادة تحميل الصفحة أو تنفيذ AJAX لتحميل النصوص الجديدة
+    console.log(`Language switched to: ${lang}`);
+
+    // إغلاق القائمة بعد الاختيار
+    document.getElementById('language-menu').classList.add('hidden');
+  }
+
+  // إغلاق القائمة عند النقر خارجها
+  document.addEventListener('click', function(event) {
+    const menu = document.getElementById('language-menu');
+    const button = event.target.closest('.language-switcher button');
+    if (!menu.contains(event.target) && !button) {
+      menu.classList.add('hidden');
+    }
+  });
+</script>

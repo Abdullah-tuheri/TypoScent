@@ -1,0 +1,15 @@
+{
+    "name": "lamsat-abeer",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "salla theme:build",
+      "zip": "salla theme:zip",
+      "watch": "salla theme:watch"
+    },
+    "dependencies": {
+      "salla-cli": "^latest",
+      "swiper": "^8",
+      "gsap": "^3"
+    }
+  }
+  

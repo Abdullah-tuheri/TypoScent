@@ -1,0 +1,67 @@
+{% layout 'default' %}
+{% section 'hero' %}
+
+<!-- Featured Products Section -->
+<section class="py-16 bg-light">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">{{ 'home.featured_products_title' | t }}</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      {% for product in collections.frontpage.products limit:8 %}
+        <div class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="relative overflow-hidden">
+            <a href="{{ product.url }}">
+              <img src="{{ product.featured_image.src }}" alt="{{ product.featured_image.alt }}" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" />
+            </a>
+            <div class="absolute top-2 right-2 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {% if product.compare_at_price > product.price %}
+                <span class="block bg-accent text-white text-xs font-bold px-2 py-1 rounded-none">{{ 'products.badges.sale' | t }}</span>
+              {% endif %}
+              <span class="block bg-primary text-white text-xs font-bold px-2 py-1 rounded-none">{{ 'products.badges.new' | t }}</span>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-medium mb-1 line-clamp-2 min-h-[2.5rem]">
+              <a href="{{ product.url }}" class="hover:text-primary transition-colors">{{ product.title }}</a>
+            </h3>
+            <div class="flex justify-between items-center">
+              <span class="font-bold">{{ product.price | money }} {{ shop.currency }}</span>
+              {% if product.compare_at_price > product.price %}
+                <span class="text-text/60 line-through">{{ product.compare_at_price | money }}</span>
+              {% endif %}
+            </div>
+            <form action="/cart/add" method="post" class="mt-3">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+              <input type="hidden" name="quantity" value="1" />
+              <button type="submit" class="w-full bg-primary hover:bg-accent text-white py-2 px-4 rounded-none transition-colors flex items-center justify-center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                  <path d="M12 5V19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                {{ 'products.add_to_cart' | t }}
+              </button>
+            </form>
+          </div>
+        </div>
+      {% else %}
+        <div class="col-span-full text-center py-12">
+          <p class="text-xl text-text/70">{{ 'products.empty_state' | t }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">{{ 'home.about_title' | t }}</h2>
+      <p class="text-lg text-text/80 mb-8">{{ 'home.about_description' | t }}</p>
+      <a href="/about" class="inline-block bg-secondary hover:bg-primary text-white py-3 px-8 rounded-none transition-colors">
+        {{ 'home.learn_more' | t }}
+      </a>
+    </div>
+  </div>
+</section>
+
+{% section 'newsletter' %}
