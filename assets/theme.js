@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const emptyState = document.getElementById('no-products-message');
     if (emptyState) {
-      emptyState.style.display = hasVisibleCard ? 'block' : 'none';
+      emptyState.style.display = hasVisibleCard ? 'none' : 'block';
     }
   }
 
