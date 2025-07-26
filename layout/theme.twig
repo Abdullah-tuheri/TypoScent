@@ -23,9 +23,9 @@
 </head>
 <body class="template-{{ template }} {% if request.locale.direction == 'rtl' %}rtl{% endif %}">
 
-  {% section 'header' %}
+  {% include 'header.twig' %}
   {{ content_for_layout }}
-  {% section 'footer' %}
+  {% include 'footer.twig' %}
 
 </body>
 </html>

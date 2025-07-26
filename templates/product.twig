@@ -1,5 +1,6 @@
-{% layout 'default' %}
+{% extends 'default.twig' %}
 
+{% block content %}
 <div class="container mx-auto px-4 py-12">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
     <!-- Product Gallery -->
@@ -15,7 +16,7 @@
       
       <!-- Thumbnail Carousel -->
       <div class="flex space-x-4 overflow-x-auto pb-2">
-        {% for image in product.images limit:4 %}
+        {% for image in product.images | slice(0, 4) %}
           <div 
             class="w-20 h-20 flex-shrink-0 bg-light rounded-md overflow-hidden cursor-pointer border-2 border-transparent hover:border-primary transition-colors"
             onclick="updateMainImage('{{ image.src }}')"
@@ -38,7 +39,7 @@
 
       <!-- Variant Selector -->
       <div class="mb-6">
-        <h3 class="font-medium mb-2">{{ 'products.select_size' | t }}</h3>
+        <h3 class="font-medium mb-2">{{ 'products.select_size' |trans }}</h3>
         <div class="flex space-x-2">
           {% for option in product.options %}
             {% if option.name == 'Size' or option.name == 'Color' %}
@@ -59,7 +60,7 @@
 
       <!-- Quantity Selector -->
       <div class="mb-6">
-        <h3 class="font-medium mb-2">{{ 'products.quantity' | t }}</h3>
+        <h3 class="font-medium mb-2">{{ 'products.quantity' |trans }}</h3>
         <div class="flex items-center border border-gray-300 rounded-none">
           <button 
             onclick="changeQuantity(-1)" 
@@ -86,7 +87,7 @@
           type="submit" 
           class="w-full bg-primary hover:bg-accent text-white py-3 px-8 rounded-none transition-colors mb-6 flex items-center justify-center group"
         >
-          {{ 'products.add_to_cart' | t }}
+          {{ 'products.add_to_cart' |trans }}
           <svg 
             class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
             viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -104,19 +105,19 @@
             class="tab-button active text-primary font-medium border-b-2 border-primary pb-2" 
             onclick="showTab(event, 'description')"
           >
-            {{ 'products.description' | t }}
+            {{ 'products.description' |trans }}
           </button>
           <button 
             class="tab-button text-text hover:text-primary transition-colors pb-2" 
             onclick="showTab(event, 'ingredients')"
           >
-            {{ 'products.ingredients' | t }}
+            {{ 'products.ingredients' |trans }}
           </button>
           <button 
             class="tab-button text-text hover:text-primary transition-colors pb-2" 
             onclick="showTab(event, 'reviews')"
           >
-            {{ 'products.reviews' | t }}
+            {{ 'products.reviews' |trans }}
           </button>
         </div>
         
@@ -132,7 +133,7 @@
         <div id="reviews" class="tab-content hidden">
           <div id="customer-reviews">
             <!-- Salla Reviews Integration -->
-            <p>{{ 'products.no_reviews' | t }}</p>
+            <p>{{ 'products.no_reviews' |trans }}</p>
           </div>
         </div>
       </div>
@@ -141,9 +142,9 @@
 
   <!-- Related Products Carousel -->
   <div class="mt-16">
-    <h2 class="text-2xl font-bold mb-6">{{ 'products.related_products' | t }}</h2>
+    <h2 class="text-2xl font-bold mb-6">{{ 'products.related_products' |trans }}</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      {% for related_product in collections.frontpage.products limit:4 %}
+      {% for related_product in collections.frontpage.products | slice(0, 4) %}
         {% render 'product-card', product: related_product %}
       {% endfor %}
     </div>
@@ -199,3 +200,4 @@
     evt.currentTarget.classList.remove("text-text");
   }
 </script>
+{% endblock %}

@@ -1,5 +1,8 @@
-{% section 'collection-header' %}
-{% section 'product-grid' %}
+{% extends 'default.twig' %}
+
+{% block content %}
+{% include 'collection-header.twig' %}
+{% include 'product-grid.twig' %}
 <aside class="filters">
   <h3>الفلاتر</h3>
   <label>
@@ -9,3 +12,4 @@
     <input type="checkbox" data-filter="100-300"> من 100 إلى 300 ريال
   </label>
 </aside>
+{% endblock %}
