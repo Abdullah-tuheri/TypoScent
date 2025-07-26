@@ -25,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Theme CSS -->
-  {{ 'theme.css.liquid' | asset_url | stylesheet_tag }}
+  {{ 'theme.css.twig' | asset_url | stylesheet_tag }}
 
   <!-- Theme JS -->
   {{ 'theme.js' | asset_url | script_tag }}
@@ -46,17 +46,17 @@
 
   <!-- Header Section -->
   <header id="header" class="transition-all duration-300 ease-in-out">
-    {% section 'header' %}
+    {% include 'header.twig' %}
   </header>
 
   <!-- Main Content -->
   <main id="main-content" class="flex-grow">
-    {% yield %}
+    {% block content %}{% endblock %}
   </main>
 
   <!-- Footer Section -->
   <footer id="footer" class="mt-auto">
-    {% section 'footer' %}
+    {% include 'footer.twig' %}
   </footer>
 
   <!-- Back to Top Button -->

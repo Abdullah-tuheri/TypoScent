@@ -1,7 +1,7 @@
 <div class="latest-products">
   <h2>أحدث المنتجات</h2>
   <div class="products-grid">
-    {% for product in collections.all.products limit:4 %}
+    {% for product in collections.all.products | slice(0, 4) %}
       <div class="product-card">
         <img src="{{ product.featured_image }}" alt="{{ product.title }}">
         <h3>{{ product.title }}</h3>

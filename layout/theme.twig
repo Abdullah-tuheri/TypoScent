@@ -10,7 +10,7 @@
   {{ content_for_header }}
   {% if template == 'product' %}
   <meta property="og:title" content="{{ product.title }}">
-  <meta property="og:description" content="{{ product.description | strip_html | truncatewords: 20 }}">
+  <meta property="og:description" content="{{ product.description | striptags | split(' ') | slice(0, 20) | join(' ') }}">
   <meta property="og:image" content="{{ product.featured_image }}">
   <meta property="og:url" content="{{ shop.url }}{{ product.url }}">
 {% endif %}
@@ -23,9 +23,9 @@
 </head>
 <body class="template-{{ template }} {% if request.locale.direction == 'rtl' %}rtl{% endif %}">
 
-  {% section 'header' %}
+  {% include 'header.twig' %}
   {{ content_for_layout }}
-  {% section 'footer' %}
+  {% include 'footer.twig' %}
 
 </body>
 </html>
