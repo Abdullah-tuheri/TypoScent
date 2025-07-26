@@ -1,3 +1,10 @@
+/* eslint-disable no-var */
+if (typeof require !== 'undefined') {
+  try {
+    var filterProducts = require('./filterProducts');
+  } catch (e) {}
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   console.log("Thème Lamsat Abeer is running!");
 
@@ -80,39 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('[data-filter]').forEach(input => {
     input.addEventListener('change', filterProducts);
   });
-
-  function filterProducts() {
-    const selectedFilters = Array.from(document.querySelectorAll('[data-filter]:checked'))
-                               .map(el => el.getAttribute('data-filter'));
-
-    const cards = document.querySelectorAll('.product-card');
-    let hasVisibleCard = false;
-
-    cards.forEach(card => {
-      const priceElement = card.querySelector('[itemprop="price"]');
-      if (!priceElement) return;
-
-      const priceText = priceElement.textContent.replace(/[^0-9.-]+/g, "");
-      const price = parseFloat(priceText);
-
-      let show = true;
-
-      if (selectedFilters.includes('under-100') && price >= 100) show = false;
-      if (selectedFilters.includes('100-300') && (price < 100 || price > 300)) show = false;
-
-      if (show) {
-        card.style.display = 'block';
-        hasVisibleCard = true;
-      } else {
-        card.style.display = 'none';
-      }
-    });
-
-    const emptyState = document.getElementById('no-products-message');
-    if (emptyState) {
-      emptyState.style.display = hasVisibleCard ? 'block' : 'none';
-    }
-  }
 
   // === Compare Products Functionality ===
   let compareList = [];
