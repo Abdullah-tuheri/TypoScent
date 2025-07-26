@@ -1,15 +1,22 @@
 {
     "name": "lamsat-abeer",
     "version": "1.0.0",
+    "dependencies": {
+      "salla-cli": "latest",
+      "swiper": "^8",
+      "gsap": "^3"
+    },
+    "devDependencies": {
+      "jest": "^29.6.1"
+    },
+    "jest": {
+      "testEnvironment": "jsdom"
+    },
     "scripts": {
       "build": "salla theme:build",
       "zip": "salla theme:zip",
-      "watch": "salla theme:watch"
-    },
-    "dependencies": {
-      "salla-cli": "^latest",
-      "swiper": "^8",
-      "gsap": "^3"
+      "watch": "salla theme:watch",
+      "test": "jest"
     }
   }
   
