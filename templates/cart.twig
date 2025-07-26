@@ -19,13 +19,13 @@
                 <div class="flex items-center border border-gray-300 rounded-none">
                   <form action="/cart/change" method="post" class="flex items-center">
                     <input type="hidden" name="id" value="{{ item.id }}">
-                    <input type="hidden" name="quantity" value="{{ item.quantity | minus: 1 }}">
+                    <input type="hidden" name="quantity" value="{{ item.quantity - 1 }}">
                     <button type="submit" class="px-3 py-1 border-r border-gray-300">−</button>
                   </form>
                   <span class="px-4 py-1">{{ item.quantity }}</span>
                   <form action="/cart/change" method="post" class="flex items-center">
                     <input type="hidden" name="id" value="{{ item.id }}">
-                    <input type="hidden" name="quantity" value="{{ item.quantity | plus: 1 }}">
+                    <input type="hidden" name="quantity" value="{{ item.quantity + 1 }}">
                     <button type="submit" class="px-3 py-1 border-l border-gray-300">+</button>
                   </form>
                 </div>
